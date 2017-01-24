@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  tasks:
+    - include_vars: vars.yaml
+    - shell: echo {{ name }} {{ age }}
+      register: result
+    - debug: var=result.stdout_lines
